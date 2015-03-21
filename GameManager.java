@@ -2,6 +2,9 @@ package Phoebe;
 
 import java.awt.Point;
 
+/**
+ *
+ */
 public class GameManager {
 	
 	private Map map;
@@ -11,6 +14,10 @@ public class GameManager {
 	private Goo goo;
 	private Oil oil;
 	
+	/**
+	 *
+	 * @param  
+	 */
 	public GameManager(int n){
 		//
 		for(int i=0;i<n;++i)
@@ -29,6 +36,11 @@ public class GameManager {
 		//
 	}
 	
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 */
 	public void loadMap(int n, String filename){
 		//
 		for(int i=0;i<n;++i)
@@ -47,6 +59,10 @@ public class GameManager {
 		//
 	}
 	
+	/**
+	 *
+	 * @param  
+	 */
 	public void start(int n){
 		//
 		for(int i=0;i<n;++i)
@@ -63,6 +79,10 @@ public class GameManager {
 		//
 	}
 	
+	/**
+	 *
+	 * @param  
+	 */
 	public void step(int n){
 		//
 		for(int i=0;i<n;++i)
@@ -79,6 +99,10 @@ public class GameManager {
 		//
 	}
 	
+	/**
+	 *
+	 * @param  
+	 */
 	public void end(int n){
 		//
 		for(int i=0;i<n;++i)
@@ -95,6 +119,10 @@ public class GameManager {
 		//
 	}
 	
+	/**
+	 *
+	 * @param  
+	 */
 	public void showResults(int n){
 		//
 		for(int i=0;i<n;++i)
@@ -111,10 +139,17 @@ public class GameManager {
 		//
 	}
 	
+	/**
+	 *
+	 */
 	public String toString(){
 		return "GameManager.";
 	}
 	
+	/**
+	 *
+	 * @param  
+	 */
 	public static void main(String[] args){
 		GameManager gm=new GameManager(0);
 		gm.start(0);

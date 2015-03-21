@@ -1,7 +1,14 @@
 package Phoebe;
 
+/**
+*  
+*/
 public class Goo implements Landable, Trap{
 
+	/**
+	 *
+	 * @param  
+	 */
 	public Goo(int n){
 		//
 		for(int i=0;i<n;++i)
@@ -16,6 +23,10 @@ public class Goo implements Landable, Trap{
 		//
 	}
 	
+	/**
+	 *
+	 * @param  
+	 */
 	public void interact(int n, Jumping jumping) {
 		//
 		for(int i=0;i<n;++i)
@@ -32,6 +43,9 @@ public class Goo implements Landable, Trap{
 		//
 	}
 	
+	/**
+	 *
+	 */
 	public String toString(){
 		return "Goo.";
 	}

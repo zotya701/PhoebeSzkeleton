@@ -3,10 +3,17 @@ package Phoebe;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+*
+*/
 public class NormalField implements Field{
 	
 	private List<Landable> elements;
 	
+	/**
+	 *
+	 * @param  
+	 */
 	public NormalField(int n){
 		//
 		for(int i=0;i<n;++i)
@@ -23,6 +30,11 @@ public class NormalField implements Field{
 		//
 	}
 
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 */
 	public void arrived(int n, Jumping jumping) {
 		//
 		for(int i=0;i<n;++i)
@@ -42,6 +54,11 @@ public class NormalField implements Field{
 		//
 	}
 	
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 */
 	public void left(int n, Jumping jumping){
 		//
 		for(int i=0;i<n;++i)
@@ -58,6 +75,11 @@ public class NormalField implements Field{
 		//
 	}
 	
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 */
 	public void addTrap(int n, Trap trap){
 		//
 		for(int i=0;i<n;++i)
@@ -74,6 +96,11 @@ public class NormalField implements Field{
 		//
 	}
 	
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 */
 	public void addRobot(int n, Robot robot){
 		//
 		for(int i=0;i<n;++i)
@@ -90,6 +117,9 @@ public class NormalField implements Field{
 		//
 	}
 	
+	/**
+	 *
+	 */
 	public String toString(){
 		return "NormalField.";
 	}

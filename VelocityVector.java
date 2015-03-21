@@ -2,11 +2,20 @@ package Phoebe;
 
 import java.awt.Point;
 
+/**
+*  
+*/
 public class VelocityVector {
 	
 	private Point direction;
 	private int velocity;
 	
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 * @param  
+	 */
 	public VelocityVector(int n, Point p, int v){
 		//
 		for(int i=0;i<n;++i)
@@ -23,6 +32,11 @@ public class VelocityVector {
 		//
 	}
 	
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 */
 	public void setDirection(int n, Point p){
 		//
 		for(int i=0;i<n;++i)
@@ -39,6 +53,11 @@ public class VelocityVector {
 		//
 	}
 	
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 */
 	public void setVelocity(int n, int v){
 		//
 		for(int i=0;i<n;++i)
@@ -55,6 +74,10 @@ public class VelocityVector {
 		//
 	}
 	
+	/**
+	 *
+	 * @param  
+	 */
 	public Point getDirection(int n){
 		//
 		for(int i=0;i<n;++i)
@@ -70,6 +93,11 @@ public class VelocityVector {
 		return direction;
 	}
 	
+	
+	/**
+	 *
+	 * @param  
+	 */
 	public int getVelocity(int n){
 		//
 		for(int i=0;i<n;++i)
@@ -85,6 +113,11 @@ public class VelocityVector {
 		return velocity;
 	}
 	
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 */
 	public void add(int n, VelocityVector v){
 		//
 		for(int i=0;i<n;++i)
@@ -101,6 +134,9 @@ public class VelocityVector {
 		//
 	}
 	
+	/**
+	 *
+	 */
 	public String toString(){
 		return "VelocityVector.";
 	}

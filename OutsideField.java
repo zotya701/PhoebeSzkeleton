@@ -1,7 +1,15 @@
 package Phoebe;
 
+/**
+*
+*/
 public class OutsideField implements Field{
 
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 */
 	public void arrived(int n, Jumping jumping) {
 		//
 		for(int i=0;i<n;++i)
@@ -18,6 +26,9 @@ public class OutsideField implements Field{
 		//
 	}
 	
+	/**
+	 *
+	 */
 	public String toString(){
 		return "OutsideField.";
 	}

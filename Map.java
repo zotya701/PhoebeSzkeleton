@@ -2,11 +2,21 @@ package Phoebe;
 
 import java.awt.Point;
 
+/**
+*
+*/
 public class Map {
 	
 	private Point size;
 	private Field[][] field;
 	
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 * @param  
+	 * @param  
+	 */
 	public Map(int n, String str, Goo goo, Oil oil){
 		//
 		for(int i=0;i<n;++i)
@@ -25,6 +35,11 @@ public class Map {
 		//
 	}
 	
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 */
 	public Field getField(int n, Point p){
 		//
 		for(int i=0;i<n;++i)
@@ -40,6 +55,12 @@ public class Map {
 		return field[p.x][p.y];
 	}
 	
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 * @param  
+	 */
 	public Point getNewPos(int n, Point p, VelocityVector v){
 		//
 		for(int i=0;i<n;++i)
@@ -55,6 +76,12 @@ public class Map {
 		return new Point(1,0);
 	}
 	
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 * @param  
+	 */
 	public int calculateDistance(int n, Point p1, Point p2){
 		//
 		for(int i=0;i<n;++i)
@@ -72,6 +99,9 @@ public class Map {
 		return 2;
 	}
 	
+	/**
+	 * 
+	 */
 	public String toString(){
 		return "Map.";
 	}

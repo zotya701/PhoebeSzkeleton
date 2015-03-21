@@ -2,6 +2,9 @@ package Phoebe;
 
 import java.awt.Point;
 
+/**
+*
+*/
 public class Robot implements Jumping, Landable{
 	
 	private Map map;
@@ -15,6 +18,13 @@ public class Robot implements Jumping, Landable{
 	private boolean onOil;
 	private boolean jumpFinished;
 	
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 * @param  
+	 * @param  
+	 */
 	public Robot(int n, Map map, Point p, VelocityVector v){
 		//
 		for(int i=0;i<n;++i)
@@ -34,6 +44,11 @@ public class Robot implements Jumping, Landable{
 		//
 	}
 	
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 */
 	public void jump(int n, VelocityVector v){
 		//
 		for(int i=0;i<n;++i)
@@ -50,6 +65,10 @@ public class Robot implements Jumping, Landable{
 		//
 	}
 	
+	/**
+	 *
+	 * @param  
+	 */
 	public void resetJump(int n){
 		//
 		for(int i=0;i<n;++i)
@@ -66,6 +85,11 @@ public class Robot implements Jumping, Landable{
 		//
 	}
 	
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 */
 	public void placeGoo(int n, Goo goo){
 		//
 		for(int i=0;i<n;++i)
@@ -82,6 +106,11 @@ public class Robot implements Jumping, Landable{
 		//
 	}
 	
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 */
 	public void placeOil(int n, Oil oil){
 		//
 		for(int i=0;i<n;++i)
@@ -98,6 +127,11 @@ public class Robot implements Jumping, Landable{
 		//
 	}
 
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 */
 	public void interact(int n, Jumping jumping) {
 		//
 		for(int i=0;i<n;++i)
@@ -115,6 +149,11 @@ public class Robot implements Jumping, Landable{
 		//
 	}
 
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 */
 	public void normalField(int n, NormalField nf) {
 		//
 		for(int i=0;i<n;++i)
@@ -132,6 +171,10 @@ public class Robot implements Jumping, Landable{
 		//
 	}
 
+	/**
+	 *
+	 * @param  
+	 */
 	public void onGoo(int n) {
 		//
 		for(int i=0;i<n;++i)
@@ -148,6 +191,10 @@ public class Robot implements Jumping, Landable{
 		//
 	}
 
+	/**
+	 *
+	 * @param  
+	 */
 	public void onOil(int n) {
 		//
 		for(int i=0;i<n;++i)
@@ -164,6 +211,10 @@ public class Robot implements Jumping, Landable{
 		//
 	}
 
+	/**
+	 *
+	 * @param  
+	 */
 	public void onRobot(int n) {
 		//
 		for(int i=0;i<n;++i)
@@ -180,6 +231,10 @@ public class Robot implements Jumping, Landable{
 		//
 	}
 
+	/**
+	 *
+	 * @param  
+	 */
 	public void onOutside(int n) {
 		//
 		for(int i=0;i<n;++i)
@@ -196,6 +251,9 @@ public class Robot implements Jumping, Landable{
 		//
 	}
 	
+	/**
+	 *
+	 */
 	public String toString(){
 		return "Robot.";
 	}

@@ -1,7 +1,14 @@
 package Phoebe;
 
+/**
+*
+*/
 public class Oil implements Landable, Trap{
 
+	/**
+	 *
+	 * @param  
+	 */
 	public Oil(int n){
 		//
 		for(int i=0;i<n;++i)
@@ -16,6 +23,11 @@ public class Oil implements Landable, Trap{
 		//
 	}
 	
+	/**
+	 *
+	 * @param  
+	 * @param  
+	 */
 	public void interact(int n, Jumping jumping) {
 		//
 		for(int i=0;i<n;++i)
@@ -32,6 +44,9 @@ public class Oil implements Landable, Trap{
 		//
 	}
 	
+	/**
+	 *
+	 */
 	public String toString(){
 		return "Oil.";
 	}
