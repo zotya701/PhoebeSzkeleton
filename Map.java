@@ -1,6 +1,9 @@
 package Phoebe;
 
 import java.awt.Point;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
 *
@@ -24,9 +27,10 @@ public class Map {
 		System.out.println(this.toString()+"constructor()");
 		//
 		
-		field=new Field[2][1];
+		field=new Field[3][1];
 		field[0][0]=new NormalField(n+1);
 		field[1][0]=new NormalField(n+1);
+		field[2][0]=new NormalField(n+1);
 		
 		//
 		for(int i=0;i<n;++i)
@@ -73,7 +77,7 @@ public class Map {
 			System.out.print("\t");
 		System.out.println("ret "+this.toString()+"getNewPos(Point, VelocityVector) : Point");
 		//
-		return new Point(1,0);
+		return new Point(2,0);
 	}
 	
 	/**

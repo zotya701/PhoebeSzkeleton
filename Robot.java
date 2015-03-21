@@ -7,6 +7,9 @@ import java.awt.Point;
 */
 public class Robot implements Jumping, Landable{
 	
+	private static int statid=0;
+	private int id;
+	
 	private Map map;
 	private VelocityVector velocityVector;
 	private RobotState state;
@@ -32,6 +35,8 @@ public class Robot implements Jumping, Landable{
 		System.out.println(this.toString()+"constructor()");
 		//
 		
+		this.id=statid;
+		statid=statid+1;
 		this.map=map;
 		this.position=p;
 		this.velocityVector=v;
@@ -57,6 +62,7 @@ public class Robot implements Jumping, Landable{
 		//
 		
 		this.currentField.left(n+1, this);
+		map.getField(n+1, map.getNewPos(n+1, this.position, this.velocityVector)).arrived(n+1, this);
 		
 		//
 		for(int i=0;i<n;++i)
@@ -255,7 +261,7 @@ public class Robot implements Jumping, Landable{
 	 *
 	 */
 	public String toString(){
-		return "Robot.";
+		return "Robot["+this.id+"].";
 	}
 	
 }

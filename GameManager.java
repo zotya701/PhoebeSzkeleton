@@ -50,7 +50,7 @@ public class GameManager {
 		
 		map=new Map(n+1, "random", goo, oil);
 		robots[0]=new Robot(n+1, map, new Point(0,0), new VelocityVector(n+1, new Point(0,0), 0));
-		robots[1]=new Robot(n+1, map, new Point(1,0), new VelocityVector(n+1, new Point(0,0), 0));
+		robots[1]=new Robot(n+1, map, new Point(2,0), new VelocityVector(n+1, new Point(0,0), 0));
 		
 		//
 		for(int i=0;i<n;++i)
@@ -153,6 +153,7 @@ public class GameManager {
 	public static void main(String[] args){
 		GameManager gm=new GameManager(0);
 		gm.start(0);
+		gm.robots[0].jump(0, null);
 	}
 	
 }
