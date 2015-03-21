@@ -2,6 +2,6 @@ package Phoebe;
 
 public interface Landable {
 	
-	public void interact(Jumping jumping);
+	public void interact(int n, Jumping jumping);
 	
 }

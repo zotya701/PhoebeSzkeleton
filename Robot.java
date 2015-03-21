@@ -15,93 +15,140 @@ public class Robot implements Jumping, Landable{
 	private boolean onOil;
 	private boolean jumpFinished;
 	
-	public Robot(Map map, Point p, VelocityVector v){
+	public Robot(int n, Map map, Point p, VelocityVector v){
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println(this.toString()+"constructor()");
-		
-		map.getField(p).arrived(this);
-		
+		//
+		this.map=map;
+		this.position=p;
+		this.velocityVector=v;
+		map.getField(n+1, p).arrived(n+1, this);
+		//
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println("ret "+this.toString()+"constructor()");
 	}
 	
-	public void jump(VelocityVector v){
+	public void jump(int n, VelocityVector v){
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println(this.toString()+"jump(VelocityVector)");
-		//To do
-		//To do
-		//To do
+		//
+		this.currentField.left(n+1, this);
+		//
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println("ret "+this.toString()+"jump(VelocityVector)");
 	}
 	
-	public void resetJump(){
+	public void resetJump(int n){
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println(this.toString()+"resetJump()");
 		//To do
 		//To do
 		//To do
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println("ret "+this.toString()+"resetJump()");
 	}
 	
-	public void placeGoo(Goo goo){
+	public void placeGoo(int n, Goo goo){
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println(this.toString()+"placeGoo(Goo)");
 		//To do
 		//To do
 		//To do
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println("ret "+this.toString()+"placeGoo(Goo)");
 	}
 	
-	public void placeOil(Oil oil){
+	public void placeOil(int n, Oil oil){
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println(this.toString()+"placeOil(Oil)");
 		//To do
 		//To do
 		//To do
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println("ret "+this.toString()+"placeOil(Oil)");
 	}
 
-	public void interact(Jumping jumping) {
+	public void interact(int n, Jumping jumping) {
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println(this.toString()+"interact()");
-		
+		//
 		this.state=RobotState.Collided;
-		jumping.onRobot();
-		
+		jumping.onRobot(n+1);
+		//
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println("ret "+this.toString()+"interact()");
 	}
 
-	public void normalField(NormalField nf) {
+	public void normalField(int n, NormalField nf) {
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println(this.toString()+"normalField(NormalField)");
-		
+		//
 		currentField=nf;
-		nf.addRobot(this);
-		
+		nf.addRobot(n+1, this);
+		//
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println("ret "+this.toString()+"normalField(NormalField)");
 	}
 
-	public void onGoo() {
+	public void onGoo(int n) {
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println(this.toString()+"onGoo()");
 		//To do
 		//To do
 		//To do
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println("ret "+this.toString()+"onGoo()");
 	}
 
-	public void onOil() {
+	public void onOil(int n) {
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println(this.toString()+"onOil()");
 		//To do
 		//To do
 		//To do
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println("ret "+this.toString()+"onOil()");
 	}
 
-	public void onRobot() {
+	public void onRobot(int n) {
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println(this.toString()+"onRobot()");
-		
-		this.jump(new VelocityVector(this.velocityVector.getDirection(), this.velocityVector.getVelocity()-1));
-		
+		//
+		this.jump(n+1, new VelocityVector(n+1, this.velocityVector.getDirection(n+1), this.velocityVector.getVelocity(n+1)-1));
+		//
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println("ret "+this.toString()+"onRobot()");
 	}
 
-	public void onOutside() {
+	public void onOutside(int n) {
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println(this.toString()+"onOutside()");
 		//To do
 		//To do
 		//To do
+		for(int i=0;i<n;++i)
+			System.out.print("\t");
 		System.out.println("ret "+this.toString()+"onOutside()");
 	}
 	

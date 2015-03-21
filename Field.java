@@ -2,6 +2,6 @@ package Phoebe;
 
 public interface Field {
 	
-	public void arrived(Jumping jumping);
+	public void arrived(int n, Jumping jumping);
 	
 }

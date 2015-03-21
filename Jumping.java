@@ -2,10 +2,10 @@ package Phoebe;
 
 public interface Jumping {
 	
-	public void normalField(NormalField nf);
-	public void onGoo();
-	public void onOil();
-	public void onRobot();
-	public void onOutside();
+	public void normalField(int n, NormalField nf);
+	public void onGoo(int n);
+	public void onOil(int n);
+	public void onRobot(int n);
+	public void onOutside(int n);
 	
 }
