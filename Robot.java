@@ -68,11 +68,15 @@ public class Robot implements Jumping, Landable{
 		System.out.println(this.toString()+"jump(VelocityVector)");
 		//
 		
-		System.out.println("Ã‰l mÃ©g a robot?");
+		System.out.println("Él még a robot?");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		try {
 			String decision=br.readLine();
 			if(decision.equals("igen")){
+				System.out.println("Ütközött vagy olajfolton állt-e elõzõleg a robot?");
+				decision=br.readLine();
+				if(decision.equals("nem"))
+					this.velocityVector.add(n+1, v);
 				this.currentField.left(n+1, this);
 				map.getField(n+1, map.getNewPos(n+1, this.position, this.velocityVector)).arrived(n+1, this);
 			}
@@ -124,7 +128,7 @@ public class Robot implements Jumping, Landable{
 		System.out.println(this.toString()+"placeGoo(Goo)");
 		//
 		
-		System.out.println("van mÃ©g csapda?");
+		System.out.println("Van még csapda?");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		try {
 			String decision=br.readLine();
@@ -155,7 +159,7 @@ public class Robot implements Jumping, Landable{
 		System.out.println(this.toString()+"placeOil(Oil)");
 		//
 		
-		System.out.println("van mÃ©g csapda?");
+		System.out.println("van még csapda?");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		try {
 			String decision=br.readLine();

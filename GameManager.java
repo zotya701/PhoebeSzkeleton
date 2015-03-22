@@ -89,7 +89,7 @@ public class GameManager {
 			this.robots[0].jump(n+1, null);
 		if(command.equals("place oil"))
 			this.robots[0].placeOil(n+1, this.oil);
-		if(command.equals("palce goo"))
+		if(command.equals("place goo"))
 			this.robots[0].placeGoo(n+1, this.goo);
 		
 		//
