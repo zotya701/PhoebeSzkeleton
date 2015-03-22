@@ -3,7 +3,11 @@ package Phoebe;
 import java.awt.Point;
 
 /**
- *
+	 * Ez az osztály fogja össze programot.
+	 * Tárolja a robotokat, a pályát, a csapdákat.
+	 * Számon tartja hanyadik körben járunk, 
+	 * és hogy ki az épp soron lévõ játékos.
+
  */
 public class GameManager {
 	
@@ -15,10 +19,7 @@ public class GameManager {
 	private Oil oil;
 	
 	/**
-	 * Ez az osztály fogja össze programot.
-	 * Tárolja a robotokat, a pályát, a csapdákat.
-	 * Számon tartja hanyadik körben járunk, 
-	 * és hogy ki az épp soron lévõ játékos.
+	 * Az osztály konstruktora, létrehozza a Trap-eket és a robotokat.
 	 * @param n 
 	 */
 	public GameManager(int n){
