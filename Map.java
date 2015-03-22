@@ -16,7 +16,7 @@ public class Map {
 	/**
 	 *
 	 * @param  
-	 * @param  
+	 * @param  String str - alapvetõen ebbõl a fájlbõl olvasná be a fájlt, de most e szerint dönti el hogyan legyen be drótozva a pálya
 	 * @param  
 	 * @param  
 	 */
@@ -28,9 +28,33 @@ public class Map {
 		//
 		
 		field=new Field[3][1];
-		field[0][0]=new NormalField(n+1);
-		field[1][0]=new NormalField(n+1);
-		field[2][0]=new NormalField(n+1);
+		if(str.equals("normal") || str.equals("robot") || str.equals("new")){
+			field[0][0]=new NormalField(n+1);
+			field[1][0]=new NormalField(n+1);
+			field[2][0]=new NormalField(n+1);
+		}
+		else if(str.equals("outside")){
+			field[0][0]=new NormalField(n+1);
+			field[1][0]=new NormalField(n+1);
+			field[2][0]=new OutsideField(n+1);
+		}
+		//else if(str.equals("robot")){
+		//	
+		//}
+		else if(str.equals("oil")){
+			field[0][0]=new NormalField(n+1);
+			field[1][0]=new NormalField(n+1);
+			NormalField nf=new NormalField(n+1);
+			nf.addTrap(n+1, oil);
+			field[2][0]=nf;
+		}
+		else if(str.equals("goo")){
+			field[0][0]=new NormalField(n+1);
+			field[1][0]=new NormalField(n+1);
+			NormalField nf=new NormalField(n+1);
+			nf.addTrap(n+1, goo);
+			field[2][0]=nf;
+		}
 		
 		//
 		for(int i=0;i<n;++i)

@@ -52,9 +52,11 @@ public class GameManager {
 		System.out.println(this.toString()+"loadMap(String)");
 		//
 		
-		map=new Map(n+1, "random", goo, oil);
+		map=new Map(n+1, filename, goo, oil);
+		if(filename.equals("robot")){
+			robots[1]=new Robot(n+1, map, new Point(2,0), new VelocityVector(n+1, new Point(0,0), 0));
+		}
 		robots[0]=new Robot(n+1, map, new Point(0,0), new VelocityVector(n+1, new Point(0,0), 0));
-		robots[1]=new Robot(n+1, map, new Point(2,0), new VelocityVector(n+1, new Point(0,0), 0));
 		
 		//
 		for(int i=0;i<n;++i)
@@ -66,15 +68,16 @@ public class GameManager {
 	/**
 	 * Ez a függvény indítja el a játékot
 	 * @param  
+	 * @param  String command - ez dönti el hogyan inicializálódjon a futtatási parancs szerint
 	 */
-	public void start(int n){
+	public void start(int n, String command){
 		//
 		for(int i=0;i<n;++i)
 			System.out.print("\t");
 		System.out.println(this.toString()+"start()");
 		//
 		
-		this.loadMap(n+1, "valami");
+		this.loadMap(n+1, command);
 		
 		//
 		for(int i=0;i<n;++i)
@@ -159,6 +162,8 @@ public class GameManager {
 		if(args.length>=1){
 			if(args[0].equals("new")){
 				//
+				GameManager gm=new GameManager(0);
+				gm.start(0, "new");
 			}
 			else if(args[0].equals("end")){
 				//
@@ -193,12 +198,6 @@ public class GameManager {
 				}
 			}
 		}
-		
-		
-		
-		GameManager gm=new GameManager(0);
-		gm.start(0);
-		//gm.robots[0].jump(0, null);
 	}
 	
 }
