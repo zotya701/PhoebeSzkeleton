@@ -5,8 +5,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+
 /**
-*
+* A pályát megvalósító osztály.
 */
 public class Map {
 	
@@ -14,11 +15,12 @@ public class Map {
 	private Field[][] field;
 	
 	/**
-	 *
-	 * @param  
-	 * @param  String str - alapvetï¿½en ebbï¿½l a fï¿½jlbï¿½l olvasnï¿½ be a fï¿½jlt, de most e szerint dï¿½nti el hogyan legyen be drï¿½tozva a pï¿½lya
-	 * @param  
-	 * @param  
+	 *A pálya konstruktora
+	 * @param  n
+	 * @param  str - alapvetõen ebbõl a fájlbõl olvasná be a fájlt,
+	 * de most e szerint dönti el hogyan legyen be drótozva a pálya
+	 * @param  goo A ragacs referenciája.
+	 * @param  oil Az olaj referenciája.
 	 */
 	public Map(int n, String str, Goo goo, Oil oil){
 		//
@@ -60,10 +62,12 @@ public class Map {
 		//
 	}
 	
+
 	/**
-	 *
+	 * A megfelelõ koordinátán lévõ Fieldet adja vissza
+	 * @param  p A Field koordinátája amit le akarunk kérni
 	 * @param  
-	 * @param  
+	 * @return A Field aminek a koordinátáit lekértük
 	 */
 	public Field getField(int n, Point p){
 		//
@@ -81,11 +85,13 @@ public class Map {
 	}
 	
 	/**
-	 *
+	 * Kezdõpont és sebességvektor megadásával kiszámolja az új poziciót.
+	 * @param  p A kezdõpont.
+	 * @param  v A sebességvektor.
 	 * @param  
-	 * @param  
-	 * @param  
+	 * @return Az új pozició
 	 */
+
 	public Point getNewPos(int n, Point p, VelocityVector v){
 		//
 		for(int i=0;i<n;++i)
@@ -102,11 +108,13 @@ public class Map {
 	}
 	
 	/**
-	 *
+	 * A Mapon lévõ két pont közötti távolságot számolja ki
+	 * @param  p1 Az egyik pont
+	 * @param  p2 A másik pont
 	 * @param  
-	 * @param  
-	 * @param  
+	 * @return A két pont közötti távolság
 	 */
+
 	public int calculateDistance(int n, Point p1, Point p2){
 		//
 		for(int i=0;i<n;++i)
