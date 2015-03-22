@@ -43,7 +43,7 @@ public class GameManager {
 	 * A pálya betöltésére szolgáló függvény. 
 	 * Fájból beolvassa a pálya adatait és a robotok kezdõpozícióit
 	 * @param  n
-	 * @param  filename A fájl neve ahonnan beolvassuk az adatokat
+	 * @param  filename A fájl neve ahonnan beolvassuk az adatokat. Itt most a felhazsnáló parancsa hogy melyik use-case szerint inicializálódjon a pálya.
 	 */
 	public void loadMap(int n, String filename){
 		//
@@ -53,7 +53,7 @@ public class GameManager {
 		//
 		
 		map=new Map(n+1, filename, goo, oil);
-		if(filename.equals("robot")){
+		if(filename.equals("robot")){//csak akkor kell még egy robot ha a robotra ugrás use-case-t akarjuk futtatni
 			robots[1]=new Robot(n+1, map, new Point(2,0), new VelocityVector(n+1, new Point(0,0), 0));
 		}
 		robots[0]=new Robot(n+1, map, new Point(0,0), new VelocityVector(n+1, new Point(0,0), 0));
@@ -161,7 +161,6 @@ public class GameManager {
 	public static void main(String[] args){
 		if(args.length>=1){
 			if(args[0].equals("new")){
-				//
 				GameManager gm=new GameManager(0);
 				gm.start(0, "new");
 			}
@@ -171,19 +170,24 @@ public class GameManager {
 			else if(args[0].equals("jump")){
 				if(args.length>=2){
 					if(args[1].equals("normal")){
-						//
+						GameManager gm=new GameManager(0);
+						gm.start(0, "normal");
 					}
 					else if(args[1].equals("outside")){
-						//
+						GameManager gm=new GameManager(0);
+						gm.start(0, "outside");
 					}
 					else if(args[1].equals("robot")){
-						//
+						GameManager gm=new GameManager(0);
+						gm.start(0, "robot");
 					}
 					else if(args[1].equals("oil")){
-						//
+						GameManager gm=new GameManager(0);
+						gm.start(0, "oil");
 					}
 					else if(args[1].equals("goo")){
-						//
+						GameManager gm=new GameManager(0);
+						gm.start(0, "goo");
 					}
 				}
 			}
