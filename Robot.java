@@ -106,8 +106,6 @@ public class Robot implements Jumping, Landable{
 		System.out.println(this.toString()+"resetJump()");
 		//
 		
-		//To do
-		
 		//
 		for(int i=0;i<n;++i)
 			System.out.print("\t");
@@ -190,7 +188,6 @@ public class Robot implements Jumping, Landable{
 		System.out.println(this.toString()+"interact()");
 		//
 		
-		this.state=RobotState.Collided;
 		jumping.onRobot(n+1);
 		
 		//
@@ -296,8 +293,6 @@ public class Robot implements Jumping, Landable{
 			System.out.print("\t");
 		System.out.println(this.toString()+"onOutside()");
 		//
-		
-		//To do
 		
 		//
 		for(int i=0;i<n;++i)
