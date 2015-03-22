@@ -219,9 +219,6 @@ public class Robot implements Jumping, Landable{
 		System.out.println(this.toString()+"onGoo()");
 		//
 	
-		int v;
-		velocityVector.setVelocity(n+1,v);
-	
 		//
 		for(int i=0;i<n;++i)
 			System.out.print("\t");
