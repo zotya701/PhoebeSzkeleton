@@ -130,7 +130,8 @@ public class GameManager {
 			System.out.print("\t");
 		System.out.println(this.toString()+"end()");
 		//
-	
+		
+		
 		showResults(n+1);
 	
 		//
@@ -180,7 +181,7 @@ public class GameManager {
 				gm.start(0, "new");
 			}
 			else if(args[0].equals("end")){
-				//
+				gm.end(0);
 			}
 			else if(args[0].equals("jump")){
 				if(args.length>=2){
