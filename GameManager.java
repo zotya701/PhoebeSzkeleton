@@ -3,12 +3,14 @@ package Phoebe;
 import java.awt.Point;
 
 /**
-	 * Ez az osztÃ¡ly fogja Ã¶ssze programot.
-	 * TÃ¡rolja a robotokat, a pÃ¡lyÃ¡t, a csapdÃ¡kat.
-	 * SzÃ¡mon tartja hanyadik kÃ¶rben jÃ¡runk, 
-	 * Ã©s hogy ki az Ã©pp soron lÃ©vÅ‘ jÃ¡tÃ©kos.
+ * Ez az osztály fogja össze programot.
+ * Tárolja a robotokat, a pályát, a csapdákat.
+ * Számon tartja hanyadik körben járunk, 
+ * és hogy ki az épp soron lévõ játékos.
+ * 
 
- */
+*/
+
 public class GameManager {
 	
 	private Map map;
@@ -19,8 +21,8 @@ public class GameManager {
 	private Oil oil;
 	
 	/**
-	 * Az osztÃ¡ly konstruktora, lÃ©trehozza a Trap-eket Ã©s a robotokat.
-	 * @param n 
+	 * Az osztály konstruktora, létrehozza a Trap-eket és a robotokat.
+	 * @param n Segédparaméter, a tabuláláshoz segítség
 	 */
 	public GameManager(int n){
 		//
@@ -41,10 +43,11 @@ public class GameManager {
 	}
 	
 	/**
-	 * A pÃ¡lya betÃ¶ltÃ©sÃ©re szolgÃ¡lÃ³ fÃ¼ggvÃ©ny. 
-	 * FÃ¡jbÃ³l beolvassa a pÃ¡lya adatait Ã©s a robotok kezdÅ‘pozÃ­ciÃ³it
-	 * @param  n
-	 * @param  filename A fÃ¡jl neve ahonnan beolvassuk az adatokat. Itt most a felhasznÃ¡lÃ³ parancsa hogy melyik use-case szerint inicializÃ¡lÃ³djon a pÃ¡lya.
+	 * A pálya betöltésére szolgáló függvény. 
+	 * Fájból beolvassa a pálya adatait és a robotok kezdõpozícióit
+	 * @param  n Segédparaméter, a tabuláláshoz segítség
+	 * @param  filename A fájl neve ahonnan beolvassuk az adatokat. 
+	 * Itt most a felhasználó parancsa hogy melyik use-case szerint inicializálódjon a pálya.
 	 */
 	public void loadMap(int n, String filename){
 		//
@@ -68,10 +71,11 @@ public class GameManager {
 	}
 	
 	/**
-	 * Ez a fÃ¼ggvÃ©ny indÃ­tja el a jÃ¡tÃ©kot
-	 * @param  
-	 * @param  String command - ez dÃ¶nti el hogyan inicializÃ¡lÃ³djon a futtatÃ¡si parancs szerint
+	 * Ez a függvény indítja el a játékot
+	 * @param  Segédparaméter, a tabuláláshoz segítség
+	 * @param  String command - ez dönti el hogyan inicializálódjon a futtatási parancs szerint
 	 */
+
 	public void start(int n, String command){
 		//
 		for(int i=0;i<n;++i)
@@ -94,11 +98,11 @@ public class GameManager {
 		System.out.println("ret "+this.toString()+"start()");
 		//
 	}
-	
 	/**
-	 * A robotok egymÃ¡s utÃ¡ni ugratÃ¡sÃ¡t vÃ©gzÅ‘ fÃ¼ggvÃ©ny
-	 * @param  
+	 * A robotok egymás utáni ugratását végzõ függvény
+	 * @param n Segédparaméter, a tabuláláshoz segítség  
 	 */
+
 	public void step(int n){
 		//
 		for(int i=0;i<n;++i)
@@ -115,10 +119,11 @@ public class GameManager {
 	}
 	
 	/**
-	 * A jÃ¡tÃ©k vÃ©gÃ©n hÃ­vÃ³dÃ³ fÃ¼ggvÃ©ny,
+	 * A játék végén hívódó függvény,
 	 * 
-	 * @param  
+	 * @param n Segédparaméter, a tabuláláshoz segítség  
 	 */
+
 	public void end(int n){
 		//
 		for(int i=0;i<n;++i)
@@ -136,9 +141,10 @@ public class GameManager {
 	}
 	
 	/**
-	 * Az eredmÃ©nyek Ã¶sszegzÃ©sÃ©t vÃ©gzÅ‘ fÃ¼ggvÃ©ny
-	 * @param  
+	 * Az eredmények összegzését végzõ függvény
+	 * @param n Segédparaméter, a tabuláláshoz segítség  
 	 */
+
 	public void showResults(int n){
 		//
 		for(int i=0;i<n;++i)
@@ -152,18 +158,21 @@ public class GameManager {
 		System.out.println("ret "+this.toString()+"showResults()");
 		//
 	}
-	
 	/**
-	 *
+	 * @return Visszaadja az osztály nevét tartalmazó stringet
 	 */
+
 	public String toString(){
 		return "GameManager.";
 	}
 	
+
 	/**
-	 * A jÃ¡tÃ©k belÃ©pÃ©si pontja, inicializÃ¡lja a GameManagert Ã©s elindÃ­tja a jÃ¡tÃ©kot.
-	 * @param  
+	 * A játék belépési pontja, inicializálja a GameManagert és elindítja a játékot.
+	 * @param args A futtatási paraméter, teszteléshez használjuk. 
+	 * Ettõl függõen fut le a megfelelõ teszteset. 
 	 */
+
 	public static void main(String[] args){
 		GameManager gm=new GameManager(0);
 		if(args.length>=1){
