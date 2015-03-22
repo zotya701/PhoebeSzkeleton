@@ -3,10 +3,10 @@ package Phoebe;
 import java.awt.Point;
 
 /**
-	 * Ez az oszt·ly fogja ˆssze programot.
-	 * T·rolja a robotokat, a p·ly·t, a csapd·kat.
-	 * Sz·mon tartja hanyadik kˆrben j·runk, 
-	 * Ès hogy ki az Èpp soron lÈvı j·tÈkos.
+	 * Ez az oszt√°ly fogja √∂ssze programot.
+	 * T√°rolja a robotokat, a p√°ly√°t, a csapd√°kat.
+	 * Sz√°mon tartja hanyadik k√∂rben j√°runk, 
+	 * √©s hogy ki az √©pp soron l√©v≈ë j√°t√©kos.
 
  */
 public class GameManager {
@@ -19,7 +19,7 @@ public class GameManager {
 	private Oil oil;
 	
 	/**
-	 * Az oszt·ly konstruktora, lÈtrehozza a Trap-eket Ès a robotokat.
+	 * Az oszt√°ly konstruktora, l√©trehozza a Trap-eket √©s a robotokat.
 	 * @param n 
 	 */
 	public GameManager(int n){
@@ -41,10 +41,10 @@ public class GameManager {
 	}
 	
 	/**
-	 * A p·lya betˆltÈsÈre szolg·lÛ f¸ggvÈny. 
-	 * F·jbÛl beolvassa a p·lya adatait Ès a robotok kezdıpozÌciÛit
+	 * A p√°lya bet√∂lt√©s√©re szolg√°l√≥ f√ºggv√©ny. 
+	 * F√°jb√≥l beolvassa a p√°lya adatait √©s a robotok kezd≈ëpoz√≠ci√≥it
 	 * @param  n
-	 * @param  filename A f·jl neve ahonnan beolvassuk az adatokat. Itt most a felhaszn·lÛ parancsa hogy melyik use-case szerint inicializ·lÛdjon a p·lya.
+	 * @param  filename A f√°jl neve ahonnan beolvassuk az adatokat. Itt most a felhaszn√°l√≥ parancsa hogy melyik use-case szerint inicializ√°l√≥djon a p√°lya.
 	 */
 	public void loadMap(int n, String filename){
 		//
@@ -54,10 +54,11 @@ public class GameManager {
 		//
 		
 		map=new Map(n+1, filename, goo, oil);
-		if(filename.equals("robot")){//csak akkor kell mÈg egy robot ha a robotra ugr·s use-case-t akarjuk futtatni
+		robots[0]=new Robot(n+1, map, new Point(0,0), new VelocityVector(n+1, new Point(1,0), 2));
+		
+		if(filename.equals("jump robot")){//csak akkor kell m√©g egy robot ha a robotra ugr√°s use-case-t akarjuk futtatni
 			robots[1]=new Robot(n+1, map, new Point(2,0), new VelocityVector(n+1, new Point(0,0), 0));
 		}
-		robots[0]=new Robot(n+1, map, new Point(0,0), new VelocityVector(n+1, new Point(0,0), 0));
 		
 		//
 		for(int i=0;i<n;++i)
@@ -67,9 +68,9 @@ public class GameManager {
 	}
 	
 	/**
-	 * Ez a f¸ggvÈny indÌtja el a j·tÈkot
+	 * Ez a f√ºggv√©ny ind√≠tja el a j√°t√©kot
 	 * @param  
-	 * @param  String command - ez dˆnti el hogyan inicializ·lÛdjon a futtat·si parancs szerint
+	 * @param  String command - ez d√∂nti el hogyan inicializ√°l√≥djon a futtat√°si parancs szerint
 	 */
 	public void start(int n, String command){
 		//
@@ -80,6 +81,13 @@ public class GameManager {
 		
 		this.loadMap(n+1, command);
 		
+		if(command.contains("jump"))
+			this.robots[0].jump(n+1, null);
+		if(command.equals("place oil"))
+			this.robots[0].placeOil(n+1, this.oil);
+		if(command.equals("palce goo"))
+			this.robots[0].placeGoo(n+1, this.goo);
+		
 		//
 		for(int i=0;i<n;++i)
 			System.out.print("\t");
@@ -88,7 +96,7 @@ public class GameManager {
 	}
 	
 	/**
-	 * A robotok egym·s ut·ni ugrat·s·t vÈgzı f¸ggvÈny
+	 * A robotok egym√°s ut√°ni ugrat√°s√°t v√©gz≈ë f√ºggv√©ny
 	 * @param  
 	 */
 	public void step(int n){
@@ -99,12 +107,7 @@ public class GameManager {
 		
 		//
 		
-		robots[currentPlayer].resetJump(n+1);
-		state=robots[currentPlayer].jump(n+1,velocityVector);
-			
-		
 		//
-		
 		for(int i=0;i<n;++i)
 			System.out.print("\t");
 		System.out.println("ret "+this.toString()+"step()");
@@ -112,7 +115,7 @@ public class GameManager {
 	}
 	
 	/**
-	 * A j·tÈk vÈgÈn hÌvÛdÛ f¸ggvÈny,
+	 * A j√°t√©k v√©g√©n h√≠v√≥d√≥ f√ºggv√©ny,
 	 * 
 	 * @param  
 	 */
@@ -133,7 +136,7 @@ public class GameManager {
 	}
 	
 	/**
-	 * Az eredmÈnyek ˆsszegzÈsÈt vÈgzı f¸ggvÈny
+	 * Az eredm√©nyek √∂sszegz√©s√©t v√©gz≈ë f√ºggv√©ny
 	 * @param  
 	 */
 	public void showResults(int n){
@@ -142,9 +145,7 @@ public class GameManager {
 			System.out.print("\t");
 		System.out.println(this.toString()+"showResults()");
 		//
-		//To do
-		//To do
-		//To do
+		
 		//
 		for(int i=0;i<n;++i)
 			System.out.print("\t");
@@ -160,7 +161,7 @@ public class GameManager {
 	}
 	
 	/**
-	 * A j·tÈk belÈpÈsi pontja, inicializ·lja a GameManagert Ès elindÌtja a j·tÈkot.
+	 * A j√°t√©k bel√©p√©si pontja, inicializ√°lja a GameManagert √©s elind√≠tja a j√°t√©kot.
 	 * @param  
 	 */
 	public static void main(String[] args){
@@ -175,36 +176,29 @@ public class GameManager {
 			else if(args[0].equals("jump")){
 				if(args.length>=2){
 					if(args[1].equals("normal")){
-						gm.start(0, "normal");
-						gm.robots[0].jump(0, null);
+						gm.start(0, "jump normal");
 					}
 					else if(args[1].equals("outside")){
-						gm.start(0, "outside");
-						gm.robots[0].jump(0, null);
+						gm.start(0, "jump outside");
 					}
 					else if(args[1].equals("robot")){
-						gm.start(0, "robot");
-						gm.robots[0].jump(0, null);
+						gm.start(0, "jump robot");
 					}
 					else if(args[1].equals("oil")){
-						gm.start(0, "oil");
-						gm.robots[0].jump(0, null);
+						gm.start(0, "jump oil");
 					}
 					else if(args[1].equals("goo")){
-						gm.start(0, "goo");
-						gm.robots[0].jump(0, null);
+						gm.start(0, "jump goo");
 					}
 				}
 			}
 			else if(args[0].equals("place")){
 				if(args.length>=2){
 					if(args[1].equals("oil")){
-						gm.start(0, "normal");
-						gm.robots[0].placeOil(0, gm.oil);
+						gm.start(0, "place oil");
 					}
 					else if(args[1].equals("goo")){
-						gm.start(0, "normal");
-						gm.robots[0].placeGoo(0, gm.goo);
+						gm.start(0, "place goo");
 					}
 				}
 			}
