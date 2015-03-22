@@ -6,7 +6,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
-*
+* A robotot megvalósító osztály. 
+* Megvalósítja a Jumping és Landable interfészt, 
+* így ugrani is képes, és rá is tudnak ugrani
 */
 public class Robot implements Jumping, Landable{
 	
@@ -25,12 +27,13 @@ public class Robot implements Jumping, Landable{
 	private boolean jumpFinished;
 	
 	/**
-	 *
-	 * @param  
-	 * @param  
-	 * @param  
-	 * @param  
+	 * A robot konstruktora, 
+	 * @param  map A pálya, hogy elhelyezhessék magukat.
+	 * @param  p A robot kezdõpozíciója.
+	 * @param  v A robotok kezdõsebessége.
+	 * @param  n Segédparaméter, a tabuláláshoz segítség 
 	 */
+
 	public Robot(int n, Map map, Point p, VelocityVector v){
 		//
 		for(int i=0;i<n;++i)
@@ -53,10 +56,11 @@ public class Robot implements Jumping, Landable{
 	}
 	
 	/**
-	 *
-	 * @param  
-	 * @param  
+	 * Az ugrást megvalósító függvény.
+	 * @param  v A robot sebességvektora, ekkorát fog ugrani.
+	 * @param  n Segédparaméter, a tabuláláshoz segítség 
 	 */
+
 	public void jump(int n, VelocityVector v){
 		//
 		for(int i=0;i<n;++i)
@@ -84,10 +88,13 @@ public class Robot implements Jumping, Landable{
 		//
 	}
 	
+
 	/**
-	 *
-	 * @param  
+	 * Ha a robot végzett az ugrásokkal akkor hívódik meg ez a függvény. 
+	 * (Robottal való ütközés esetén rekurzívan újrahívódik a jump egyel kisebb VelocityVector-al)
+	 * @param   n Segédparaméter, a tabuláláshoz segítség 
 	 */
+
 	public void resetJump(int n){
 		//
 		for(int i=0;i<n;++i)
@@ -105,10 +112,11 @@ public class Robot implements Jumping, Landable{
 	}
 	
 	/**
-	 *
-	 * @param  
-	 * @param  
+	 * A robot elhelyez egy ragacsot a jelenlegi pozicióján
+	 * @param  goo A ragacs referenciája.
+	 * @param   n Segédparaméter, a tabuláláshoz segítség 
 	 */
+
 	public void placeGoo(int n, Goo goo){
 		//
 		for(int i=0;i<n;++i)
@@ -135,10 +143,11 @@ public class Robot implements Jumping, Landable{
 	}
 	
 	/**
-	 *
-	 * @param  
-	 * @param  
+	 *	A robot elhelyez egy olajat a jelenlegi pozicióján
+	 * @param  oil A olaj referenciája.
+	 * @param   n Segédparaméter, a tabuláláshoz segítség 
 	 */
+
 	public void placeOil(int n, Oil oil){
 		//
 		for(int i=0;i<n;++i)
@@ -165,10 +174,11 @@ public class Robot implements Jumping, Landable{
 	}
 
 	/**
-	 *
-	 * @param  
-	 * @param  
+	 * A robot reakciója ha egy másik Jumping objektum "ráugrik"
+	 * @param  jumping A rálépõ objektum
+	 * @param  n Segédparaméter, a tabuláláshoz segítség 
 	 */
+
 	public void interact(int n, Jumping jumping) {
 		//
 		for(int i=0;i<n;++i)
@@ -187,10 +197,11 @@ public class Robot implements Jumping, Landable{
 	}
 
 	/**
-	 *
-	 * @param  
-	 * @param  
+	 * Ez hívódik meg ha a robot NormalField-re érkezik.
+	 * @param  nf A NormalField amire érkezik.
+	 * @param   n Segédparaméter, a tabuláláshoz segítség 
 	 */
+
 	public void normalField(int n, NormalField nf) {
 		//
 		for(int i=0;i<n;++i)
@@ -207,11 +218,11 @@ public class Robot implements Jumping, Landable{
 		System.out.println("ret "+this.toString()+"normalField(NormalField)");
 		//
 	}
-
 	/**
-	 *
-	 * @param  
+	 * Ez a függvény hívódik meg ha a robot ragacsra ugrik.
+	 * @param   n Segédparaméter, a tabuláláshoz segítség 
 	 */
+
 	public void onGoo(int n) {
 		//
 		for(int i=0;i<n;++i)
@@ -226,10 +237,12 @@ public class Robot implements Jumping, Landable{
 		//
 	}
 
+
 	/**
-	 *
-	 * @param  
+	 * Ez a függvény hívódik meg ha a robot olajra ugrik.
+	 * @param   n Segédparaméter, a tabuláláshoz segítség 
 	 */
+
 	public void onOil(int n) {
 		//
 		for(int i=0;i<n;++i)
@@ -247,9 +260,10 @@ public class Robot implements Jumping, Landable{
 	}
 
 	/**
-	 *
-	 * @param  
+	 * Ez a függvény hívódik meg ha a robot másik robottal ütközik.
+	 * @param   n Segédparaméter, a tabuláláshoz segítség 
 	 */
+
 	public void onRobot(int n) {
 		//
 		for(int i=0;i<n;++i)
@@ -267,9 +281,10 @@ public class Robot implements Jumping, Landable{
 	}
 
 	/**
-	 *
-	 * @param  
+	 * Árokba ugrás esetén ez a függvény hívódik meg.
+	 * @param   n Segédparaméter, a tabuláláshoz segítség 
 	 */
+
 	public void onOutside(int n) {
 		//
 		for(int i=0;i<n;++i)
