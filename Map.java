@@ -30,7 +30,7 @@ public class Map {
 		//
 		
 		field=new Field[3][1];
-		if(str.equals("jump normal") || str.equals("jump robot") || str.equals("new")){
+		if(str.equals("jump normal") || str.equals("jump robot") || str.equals("new") || str.contains("place")){
 			field[0][0]=new NormalField(n+1);
 			field[1][0]=new NormalField(n+1);
 			field[2][0]=new NormalField(n+1);
