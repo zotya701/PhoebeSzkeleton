@@ -4,15 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-*
+* Ezek azok a Field-ek, amikre ugorva a robot játékban marad.
+* Tárholja a rajta elõforduló Landable objektumokat.
 */
 public class NormalField implements Field{
 	
 	private List<Landable> elements;
 	
 	/**
-	 *
-	 * @param  
+	 * Az osztály konstruktora, létrehozza a tömböt(ArrayList) a Landable objektumoknak.
+	 * @param n Segédparaméter, a tabuláláshoz segítség 
 	 */
 	public NormalField(int n){
 		//
@@ -31,9 +32,10 @@ public class NormalField implements Field{
 	}
 
 	/**
-	 *
-	 * @param  
-	 * @param  
+	 * Az interfészben megkövetelt függvény megvalósítása.
+	 * "Összehozza" a rá ugró objektumot a rajta lévõkkel.
+	 * @param  jumping Aki ráugrott a mezõre.
+	 * @param n Segédparaméter, a tabuláláshoz segítség 
 	 */
 	public void arrived(int n, Jumping jumping) {
 		//
@@ -55,9 +57,9 @@ public class NormalField implements Field{
 	}
 	
 	/**
-	 *
-	 * @param  
-	 * @param  
+	 * Leveszi a jumping objektumot magáról(a tömbbõl) a mezõ
+	 * @param  jumping Ezt kell kivennie a tömbbõl
+	 * @param n Segédparaméter, a tabuláláshoz segítség 
 	 */
 	public void left(int n, Jumping jumping){
 		//
@@ -76,9 +78,9 @@ public class NormalField implements Field{
 	}
 	
 	/**
-	 *
-	 * @param  
-	 * @param  
+	 * Hozzáad egy csapdát a mezõhöz
+	 * @param  trap Ezt rakja bele az elements tömbjébe
+	 * @param n Segédparaméter, a tabuláláshoz segítség 
 	 */
 	public void addTrap(int n, Trap trap){
 		//
@@ -97,9 +99,9 @@ public class NormalField implements Field{
 	}
 	
 	/**
-	 *
-	 * @param  
-	 * @param  
+	 * Hozzáad egy robotot a mezõhöz.
+	 * @param  robot Ezt rakja bele az elements tömbbe
+	 * @param n Segédparaméter, a tabuláláshoz segítség  
 	 */
 	public void addRobot(int n, Robot robot){
 		//

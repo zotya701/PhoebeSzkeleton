@@ -3,7 +3,7 @@ package Phoebe;
 import java.awt.Point;
 
 /**
-*  
+*  Sebességvektor, tárol egy irányt és egy sebességet.
 */
 public class VelocityVector {
 	
@@ -11,10 +11,10 @@ public class VelocityVector {
 	private int velocity;
 	
 	/**
-	 *
-	 * @param  
-	 * @param  
-	 * @param  
+	 * Az osztály kontruktora.
+	 * @param  p Kezdõirány
+	 * @param  v Kezdõsebesség
+	 * @param  n Segédparaméter, a tabuláláshoz segítség 
 	 */
 	public VelocityVector(int n, Point p, int v){
 		//
@@ -33,9 +33,9 @@ public class VelocityVector {
 	}
 	
 	/**
-	 *
-	 * @param  
-	 * @param  
+	 * Az irány változtatását  kezelõ függvény.
+	 * @param  p Beállítandó irány.
+	 * @param  n Segédparaméter, a tabuláláshoz segítség 
 	 */
 	public void setDirection(int n, Point p){
 		//
@@ -54,9 +54,9 @@ public class VelocityVector {
 	}
 	
 	/**
-	 *
-	 * @param  
-	 * @param  
+	 *A sebesség változtatását kezelõ függvény
+	 * @param  v A beállítandó sebesség
+	 * @param   n Segédparaméter, a tabuláláshoz segítség 
 	 */
 	public void setVelocity(int n, int v){
 		//
@@ -75,8 +75,9 @@ public class VelocityVector {
 	}
 	
 	/**
-	 *
-	 * @param  
+	 * Az irány lekérdezése
+	 * @param   n Segédparaméter, a tabuláláshoz segítség 
+	 * @return Egy pointot ad vissza az iránynak megfelelõen.
 	 */
 	public Point getDirection(int n){
 		//
@@ -95,8 +96,9 @@ public class VelocityVector {
 	
 	
 	/**
-	 *
-	 * @param  
+	 * A sebesség lekérdezése
+	 * @param  n Segédparaméter, a tabuláláshoz segítség 
+	 * @return A sebességet adja vissza.
 	 */
 	public int getVelocity(int n){
 		//
@@ -114,9 +116,9 @@ public class VelocityVector {
 	}
 	
 	/**
-	 *
-	 * @param  
-	 * @param  
+	 * Hozzáad egy sebességvektort az eddigi sebességvektorhoz
+	 * @param   v Ezt adjuk hozzá a sebességvektorunkhoz.
+	 * @param   n Segédparaméter, a tabuláláshoz segítség 
 	 */
 	public void add(int n, VelocityVector v){
 		//

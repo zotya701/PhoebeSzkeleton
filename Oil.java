@@ -1,13 +1,13 @@
 package Phoebe;
 
 /**
-*
+*  Az olaj csapda (Trap) viselkedését megvalósító osztály
 */
 public class Oil implements Landable, Trap{
 
 	/**
-	 *
-	 * @param  
+	 * Az olaj konstruktora
+	 * @param  n Segédparaméter, a tabuláláshoz segítség  
 	 */
 	public Oil(int n){
 		//
@@ -24,9 +24,9 @@ public class Oil implements Landable, Trap{
 	}
 	
 	/**
-	 *
-	 * @param  
-	 * @param  
+	 * Az olaj interakciója a "ráugrókkal".
+	 * @param  jumping a Jumping típusú objektum amivel kapcsolatba lép az olaj
+	 * @param n Segédparaméter, a tabuláláshoz segítség  
 	 */
 	public void interact(int n, Jumping jumping) {
 		//

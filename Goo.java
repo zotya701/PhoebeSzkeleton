@@ -1,13 +1,13 @@
 package Phoebe;
 
 /**
-*  
+*  A ragacs csapda (Trap) viselkedését megvalósító osztály
 */
 public class Goo implements Landable, Trap{
 
 	/**
-	 *
-	 * @param  
+	 * A ragacs konstruktora
+	 * @param n Segédparaméter, a tabuláláshoz segítség  
 	 */
 	public Goo(int n){
 		//
@@ -24,8 +24,9 @@ public class Goo implements Landable, Trap{
 	}
 	
 	/**
-	 *
-	 * @param  
+	 * A ragacs interakciója a "ráugrókkal".
+	 * @param  jumping a Jumping típusú objektum amivel kapcsolatba lép a ragacs
+	 * @param n Segédparaméter, a tabuláláshoz segítség  
 	 */
 	public void interact(int n, Jumping jumping) {
 		//

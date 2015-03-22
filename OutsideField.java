@@ -3,13 +3,13 @@ package Phoebe;
 import java.util.ArrayList;
 
 /**
-*
+* Az árkot megvalósító osztály
 */
 public class OutsideField implements Field{
 
 	/**
-	 *
-	 * @param  
+	 * Az árok konstruktora
+	 * @param n Segédparaméter, a tabuláláshoz segítség   
 	 */
 	public OutsideField(int n){
 		//
@@ -26,9 +26,10 @@ public class OutsideField implements Field{
 	}
 	
 	/**
-	 *
-	 * @param  
-	 * @param  
+	 * Az interfészben megkövetelt függvény megvalósítása.
+	 * Meghívja a ráugró megfelelõ függvényét
+	 * @param  jumping Aki ráugrott a mezõre
+	 * @param  n Segédparaméter, a tabuláláshoz segítség  
 	 */
 	public void arrived(int n, Jumping jumping) {
 		//
