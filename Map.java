@@ -13,6 +13,7 @@ public class Map {
 	
 	private Point size;
 	private Field[][] field;
+	private boolean second=false;//csak szkeleton miatt hogy robotra ugráskor jól fusson
 	
 	/**
 	 *A pálya konstruktora
@@ -104,7 +105,11 @@ public class Map {
 			System.out.print("\t");
 		System.out.println("ret "+this.toString()+"getNewPos(Point, VelocityVector) : Point");
 		//
-		return new Point(2,0);
+		if(second==false){
+			this.second=true;
+			return new Point(2,0);
+		}
+		else return new Point(1,0);
 	}
 	
 	/**
