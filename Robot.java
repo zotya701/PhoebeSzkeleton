@@ -233,7 +233,9 @@ public class Robot implements Jumping, Landable{
 			System.out.print("\t");
 		System.out.println(this.toString()+"onGoo()");
 		//
-	
+		
+		this.velocityVector.setVelocity(n+1, this.velocityVector.getVelocity(n+1)/2);//felezi a sebességet
+		
 		//
 		for(int i=0;i<n;++i)
 			System.out.print("\t");
@@ -254,8 +256,6 @@ public class Robot implements Jumping, Landable{
 		System.out.println(this.toString()+"onOil()");
 		//
 		
-		//To do
-		
 		//
 		for(int i=0;i<n;++i)
 			System.out.print("\t");
@@ -275,7 +275,8 @@ public class Robot implements Jumping, Landable{
 		System.out.println(this.toString()+"onRobot()");
 		//
 		
-		this.jump(n+1, new VelocityVector(n+1, this.velocityVector.getDirection(n+1), this.velocityVector.getVelocity(n+1)-1));
+		this.velocityVector.setVelocity(n+1, this.velocityVector.getVelocity(n+1)-1);//ütközésnél újabb ugrás elõtt 1 el csökkenti a sebességet
+		this.jump(n+1, this.velocityVector);
 		
 		//
 		for(int i=0;i<n;++i)
