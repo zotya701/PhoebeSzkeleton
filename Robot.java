@@ -64,7 +64,7 @@ public class Robot implements Jumping, Landable{
 		System.out.println(this.toString()+"jump(VelocityVector)");
 		//
 		
-		System.out.println("�l m�g a robot?");
+		System.out.println("Él még a robot?");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		try {
 			String decision=br.readLine();
@@ -116,17 +116,16 @@ public class Robot implements Jumping, Landable{
 		System.out.println(this.toString()+"placeGoo(Goo)");
 		//
 		
-<<<<<<< HEAD
-		if(gooTraps>0){
-			addTrap(n+1,goo);
-			boolean contains=elements.contains(goo);
-			if(contains==false)
-				list.add(goo);
-			gooTraps=gooTraps-1;
+		System.out.println("van még csapda?");
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		try {
+			String decision=br.readLine();
+			if(decision.equals("igen"))
+				this.currentField.addTrap(n+1, goo);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-=======
-		this.currentField.addTrap(n+1, goo);
->>>>>>> origin/master
 		
 		//
 		for(int i=0;i<n;++i)
@@ -147,12 +146,15 @@ public class Robot implements Jumping, Landable{
 		System.out.println(this.toString()+"placeOil(Oil)");
 		//
 		
-		if(gooTraps>0){
-			addTrap(n+1,oil);
-			boolean contains=elements.contains(oil);
-			if(contains==false)
-				list.add(oil);
-			gooTraps=gooTraps-1;
+		System.out.println("van még csapda?");
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		try {
+			String decision=br.readLine();
+			if(decision.equals("igen"))
+				this.currentField.addTrap(n+1, oil);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		//
