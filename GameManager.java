@@ -15,8 +15,11 @@ public class GameManager {
 	private Oil oil;
 	
 	/**
-	 *
-	 * @param  
+	 * Ez az osztály fogja össze programot.
+	 * Tárolja a robotokat, a pályát, a csapdákat.
+	 * Számon tartja hanyadik körben járunk, 
+	 * és hogy ki az épp soron lévõ játékos.
+	 * @param n 
 	 */
 	public GameManager(int n){
 		//
@@ -37,9 +40,10 @@ public class GameManager {
 	}
 	
 	/**
-	 *
-	 * @param  
-	 * @param  
+	 * A pálya betöltésére szolgáló függvény. 
+	 * Fájból beolvassa a pálya adatait és a robotok kezdõpozícióit
+	 * @param  n
+	 * @param  filename A fájl neve ahonnan beolvassuk az adatokat
 	 */
 	public void loadMap(int n, String filename){
 		//
@@ -60,7 +64,7 @@ public class GameManager {
 	}
 	
 	/**
-	 *
+	 * Ez a függvény indítja el a játékot
 	 * @param  
 	 */
 	public void start(int n){
@@ -80,7 +84,7 @@ public class GameManager {
 	}
 	
 	/**
-	 *
+	 * A robotok egymás utáni ugratását végzõ függvény
 	 * @param  
 	 */
 	public void step(int n){
@@ -100,7 +104,8 @@ public class GameManager {
 	}
 	
 	/**
-	 *
+	 * A játék végén hívódó függvény,
+	 * 
 	 * @param  
 	 */
 	public void end(int n){
@@ -120,7 +125,7 @@ public class GameManager {
 	}
 	
 	/**
-	 *
+	 * Az eredmények összegzését végzõ függvény
 	 * @param  
 	 */
 	public void showResults(int n){
@@ -147,7 +152,7 @@ public class GameManager {
 	}
 	
 	/**
-	 *
+	 * A játék belépési pontja, inicializálja a GameManagert és elindítja a játékot.
 	 * @param  
 	 */
 	public static void main(String[] args){
