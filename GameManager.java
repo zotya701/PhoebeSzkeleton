@@ -3,7 +3,11 @@ package Phoebe;
 import java.awt.Point;
 
 /**
- *
+	 * Ez az osztály fogja össze programot.
+	 * Tárolja a robotokat, a pályát, a csapdákat.
+	 * Számon tartja hanyadik körben járunk, 
+	 * és hogy ki az épp soron lévõ játékos.
+
  */
 public class GameManager {
 	
@@ -15,10 +19,7 @@ public class GameManager {
 	private Oil oil;
 	
 	/**
-	 * Ez az osztály fogja össze programot.
-	 * Tárolja a robotokat, a pályát, a csapdákat.
-	 * Számon tartja hanyadik körben járunk, 
-	 * és hogy ki az épp soron lévõ játékos.
+	 * Az osztály konstruktora, létrehozza a Trap-eket és a robotokat.
 	 * @param n 
 	 */
 	public GameManager(int n){
@@ -43,7 +44,7 @@ public class GameManager {
 	 * A pálya betöltésére szolgáló függvény. 
 	 * Fájból beolvassa a pálya adatait és a robotok kezdõpozícióit
 	 * @param  n
-	 * @param  filename A fájl neve ahonnan beolvassuk az adatokat. Itt most a felhazsnáló parancsa hogy melyik use-case szerint inicializálódjon a pálya.
+	 * @param  filename A fájl neve ahonnan beolvassuk az adatokat. Itt most a felhasználó parancsa hogy melyik use-case szerint inicializálódjon a pálya.
 	 */
 	public void loadMap(int n, String filename){
 		//
@@ -98,19 +99,9 @@ public class GameManager {
 		
 		//
 		
-		if(robotsEliminated[currentPlayer]==false){
-			RobotState state;
-			robots[currentPlayer].resetJump(n+1);
-			state=robots[currentPlayer].jump(n+1,velocityVector);
-			if(state==Eliminated)
-				robotsEliminated[currentPlayer]==true;		
-		}
-		int db=0;
-		for(int i=0;i<4;++i)
-			if(robotsEliminated[i]==true)
-				db+=1;
-		if(db>=3 || round>maxround)
-				end();
+		robots[currentPlayer].resetJump(n+1);
+		state=robots[currentPlayer].jump(n+1,velocityVector);
+			
 		
 		//
 		
@@ -173,9 +164,9 @@ public class GameManager {
 	 * @param  
 	 */
 	public static void main(String[] args){
+		GameManager gm=new GameManager(0);
 		if(args.length>=1){
 			if(args[0].equals("new")){
-				GameManager gm=new GameManager(0);
 				gm.start(0, "new");
 			}
 			else if(args[0].equals("end")){
@@ -184,34 +175,36 @@ public class GameManager {
 			else if(args[0].equals("jump")){
 				if(args.length>=2){
 					if(args[1].equals("normal")){
-						GameManager gm=new GameManager(0);
 						gm.start(0, "normal");
+						gm.robots[0].jump(0, null);
 					}
 					else if(args[1].equals("outside")){
-						GameManager gm=new GameManager(0);
 						gm.start(0, "outside");
+						gm.robots[0].jump(0, null);
 					}
 					else if(args[1].equals("robot")){
-						GameManager gm=new GameManager(0);
 						gm.start(0, "robot");
+						gm.robots[0].jump(0, null);
 					}
 					else if(args[1].equals("oil")){
-						GameManager gm=new GameManager(0);
 						gm.start(0, "oil");
+						gm.robots[0].jump(0, null);
 					}
 					else if(args[1].equals("goo")){
-						GameManager gm=new GameManager(0);
 						gm.start(0, "goo");
+						gm.robots[0].jump(0, null);
 					}
 				}
 			}
 			else if(args[0].equals("place")){
 				if(args.length>=2){
 					if(args[1].equals("oil")){
-						//
+						gm.start(0, "normal");
+						gm.robots[0].placeOil(0, gm.oil);
 					}
 					else if(args[1].equals("goo")){
-						//
+						gm.start(0, "normal");
+						gm.robots[0].placeGoo(0, gm.goo);
 					}
 				}
 			}

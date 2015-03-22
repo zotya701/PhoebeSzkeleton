@@ -1,6 +1,9 @@
 package Phoebe;
 
 import java.awt.Point;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
 *
@@ -61,8 +64,18 @@ public class Robot implements Jumping, Landable{
 		System.out.println(this.toString()+"jump(VelocityVector)");
 		//
 		
-		this.currentField.left(n+1, this);
-		map.getField(n+1, map.getNewPos(n+1, this.position, this.velocityVector)).arrived(n+1, this);
+		System.out.println("Él még a robot?");
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		try {
+			String decision=br.readLine();
+			if(decision.equals("igen")){
+				this.currentField.left(n+1, this);
+				map.getField(n+1, map.getNewPos(n+1, this.position, this.velocityVector)).arrived(n+1, this);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		//
 		for(int i=0;i<n;++i)
@@ -103,6 +116,7 @@ public class Robot implements Jumping, Landable{
 		System.out.println(this.toString()+"placeGoo(Goo)");
 		//
 		
+<<<<<<< HEAD
 		if(gooTraps>0){
 			addTrap(n+1,goo);
 			boolean contains=elements.contains(goo);
@@ -110,6 +124,9 @@ public class Robot implements Jumping, Landable{
 				list.add(goo);
 			gooTraps=gooTraps-1;
 		}
+=======
+		this.currentField.addTrap(n+1, goo);
+>>>>>>> origin/master
 		
 		//
 		for(int i=0;i<n;++i)
