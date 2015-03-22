@@ -95,11 +95,25 @@ public class GameManager {
 		for(int i=0;i<n;++i)
 			System.out.print("\t");
 		System.out.println(this.toString()+"step()");
+		
 		//
-		//To do
-		//To do
-		//To do
+		
+		if(robotsEliminated[currentPlayer]==false){
+			RobotState state;
+			robots[currentPlayer].resetJump(n+1);
+			state=robots[currentPlayer].jump(n+1,velocityVector);
+			if(state==Eliminated)
+				robotsEliminated[currentPlayer]==true;		
+		}
+		int db=0;
+		for(int i=0;i<4;++i)
+			if(robotsEliminated[i]==true)
+				db+=1;
+		if(db>=3 || round>maxround)
+				end();
+		
 		//
+		
 		for(int i=0;i<n;++i)
 			System.out.print("\t");
 		System.out.println("ret "+this.toString()+"step()");
@@ -117,9 +131,9 @@ public class GameManager {
 			System.out.print("\t");
 		System.out.println(this.toString()+"end()");
 		//
-		//To do
-		//To do
-		//To do
+	
+		showResults(n+1);
+	
 		//
 		for(int i=0;i<n;++i)
 			System.out.print("\t");
