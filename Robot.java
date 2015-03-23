@@ -6,14 +6,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
-* A robotot megvalósító osztály. 
-* Megvalósítja a Jumping és Landable interfészt, 
-* így ugrani is képes, és rá is tudnak ugrani
-*/
+ * A robotot megvalósító osztály. 
+ * Megvalósítja a Jumping és Landable interfészt, 
+ * így ugrani is képes, és rá is tudnak ugrani
+ */
 public class Robot implements Jumping, Landable{
 	
-	private static int statid=0;
-	private int id;
+	private static int statid=0;//id növeléséhez
+	private int id;//kiiratásnál amikor a robotok ütköznek, megkülönböztethetõek legyenek.
 	
 	private Map map;
 	private VelocityVector velocityVector;
@@ -212,6 +212,7 @@ public class Robot implements Jumping, Landable{
 		
 		currentField=nf;
 		nf.addRobot(n+1, this);
+		this.routeTravelled=map.calculateDistance(n+1, null, null);
 		
 		//
 		for(int i=0;i<n;++i)

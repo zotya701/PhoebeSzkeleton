@@ -8,8 +8,7 @@ import java.awt.Point;
  * Számon tartja hanyadik körben járunk, 
  * és hogy ki az épp soron lévõ játékos.
  * 
-
-*/
+ */
 
 public class GameManager {
 	
@@ -59,7 +58,7 @@ public class GameManager {
 		map=new Map(n+1, filename, goo, oil);
 		robots[0]=new Robot(n+1, map, new Point(0,0), new VelocityVector(n+1, new Point(1,0), 2));
 		
-		if(filename.equals("jump robot")){//csak akkor kell mÃ©g egy robot ha a robotra ugrÃ¡s use-case-t akarjuk futtatni
+		if(filename.equals("jump robot")){//csak akkor kell még egy robot ha a robotra ugrás use-case-t akarjuk futtatni
 			robots[1]=new Robot(n+1, map, new Point(2,0), new VelocityVector(n+1, new Point(0,0), 0));
 		}
 		

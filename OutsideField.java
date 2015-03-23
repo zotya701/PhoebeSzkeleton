@@ -3,8 +3,8 @@ package Phoebe;
 import java.util.ArrayList;
 
 /**
-* Az árkot megvalósító osztály
-*/
+ * Az árkot megvalósító osztály
+ */
 public class OutsideField implements Field{
 
 	/**

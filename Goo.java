@@ -1,8 +1,8 @@
 package Phoebe;
 
 /**
-*  A ragacs csapda (Trap) viselkedését megvalósító osztály
-*/
+ * A ragacs csapda (Trap) viselkedését megvalósító osztály
+ */
 public class Goo implements Landable, Trap{
 
 	/**

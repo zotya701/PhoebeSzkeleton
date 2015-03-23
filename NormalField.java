@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-* Ezek azok a Field-ek, amikre ugorva a robot játékban marad.
-* Tárholja a rajta elõforduló Landable objektumokat.
-*/
+ * Ezek azok a Field-ek, amikre ugorva a robot játékban marad.
+ * Tárholja a rajta elõforduló Landable objektumokat.
+ */
 public class NormalField implements Field{
 	
 	private List<Landable> elements;
@@ -44,7 +44,7 @@ public class NormalField implements Field{
 		System.out.println(this.toString()+"arrived(Jumping)");
 		//
 		
-		for(Landable l : elements){
+		for(Landable l : elements){//interakcióba lép a mezõn lévõ objektumokkal (robot/ragacsfolt/olajfolt)
 			l.interact(n+1, jumping);
 		}
 		jumping.normalField(n+1, this);

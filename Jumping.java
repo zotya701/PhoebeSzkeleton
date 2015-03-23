@@ -1,8 +1,8 @@
 package Phoebe;
 
 /**
-* Az ugrani képes osztályok interfésze
-*/
+ * Az ugrani képes osztályok interfésze
+ */
 public interface Jumping {
 	
 	/**

@@ -3,8 +3,8 @@ package Phoebe;
 import java.awt.Point;
 
 /**
-*  Sebességvektor, tárol egy irányt és egy sebességet.
-*/
+ * Sebességvektor, tárol egy irányt és egy sebességet.
+ */
 public class VelocityVector {
 	
 	private Point direction;
@@ -22,8 +22,6 @@ public class VelocityVector {
 			System.out.print("\t");
 		System.out.println(this.toString()+"constructor()");
 		//
-		
-		//To do
 		
 		//
 		for(int i=0;i<n;++i)
@@ -44,8 +42,6 @@ public class VelocityVector {
 		System.out.println(this.toString()+"setDirection(Point)");
 		//
 		
-		//To do
-		
 		//
 		for(int i=0;i<n;++i)
 			System.out.print("\t");
@@ -64,8 +60,6 @@ public class VelocityVector {
 			System.out.print("\t");
 		System.out.println(this.toString()+"setVelocity(int)");
 		//
-		
-		//To do
 		
 		//
 		for(int i=0;i<n;++i)
@@ -126,8 +120,6 @@ public class VelocityVector {
 			System.out.print("\t");
 		System.out.println(this.toString()+"add(VelocityVector)");
 		//
-		
-		//To do
 		
 		//
 		for(int i=0;i<n;++i)

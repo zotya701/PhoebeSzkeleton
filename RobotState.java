@@ -1,8 +1,8 @@
 package Phoebe;
 
 /**
-*  A robot lehetséges állapotai.
-*/
+ *  A robot lehetséges állapotai.
+ */
 public enum RobotState {
 	
 	Normal,

@@ -1,8 +1,8 @@
 package Phoebe;
 
 /**
-*  Az olaj csapda (Trap) viselkedését megvalósító osztály
-*/
+ * Az olaj csapda (Trap) viselkedését megvalósító osztály
+ */
 public class Oil implements Landable, Trap{
 
 	/**

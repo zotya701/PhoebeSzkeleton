@@ -1,8 +1,8 @@
 package Phoebe;
 
 /**
-* Azoknak az osztályoknak az interfésze, akik a NormalFielden elõfordulhatnak
-*/
+ * Azoknak az osztályoknak az interfésze, akik a NormalFielden elõfordulhatnak
+ */
 public interface Landable {
 	
 	/**

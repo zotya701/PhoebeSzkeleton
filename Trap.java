@@ -1,8 +1,8 @@
 package Phoebe;
 
 /**
-*  A csapdák interfésze
-*/
+ *  A csapdák interfésze
+ */
 public interface Trap {
 
 }

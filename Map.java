@@ -7,8 +7,8 @@ import java.io.InputStreamReader;
 
 
 /**
-* A pályát megvalósító osztály.
-*/
+ * A pályát megvalósító osztály.
+ */
 public class Map {
 	
 	private Point size;
@@ -30,6 +30,7 @@ public class Map {
 		System.out.println(this.toString()+"constructor()");
 		//
 		
+		//indítási paraméter szerint inicializálja bedtrótozva a pályát
 		field=new Field[3][1];
 		if(str.equals("jump normal") || str.equals("jump robot") || str.equals("new") || str.contains("place")){
 			field[0][0]=new NormalField(n+1);
@@ -105,11 +106,11 @@ public class Map {
 			System.out.print("\t");
 		System.out.println("ret "+this.toString()+"getNewPos(Point, VelocityVector) : Point");
 		//
-		if(second==false){
+		if(second==false){//robotra ugráskor 2szer fog lefutni ez a metódus, másodszorra a robot "visszapattan"
 			this.second=true;
 			return new Point(2,0);
 		}
-		else return new Point(1,0);
+		else return new Point(1,0);//ezért egyel elöbbi mezõre ugrik
 	}
 	
 	/**
@@ -126,8 +127,6 @@ public class Map {
 			System.out.print("\t");
 		System.out.println(this.toString()+"calculateDistance(Point, Point) : int");
 		//
-		
-		//To do
 		
 		//
 		for(int i=0;i<n;++i)
